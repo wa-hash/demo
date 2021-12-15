@@ -1,3 +1,5 @@
+# 以爬取同花顺数据中心'http://data.10jqka.com.cn/'的某些股票的财务分析数据为例
+
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -24,7 +26,8 @@ for code in Stock_code:
         url = 'http://basic.10jqka.com.cn/api/stock/export.php?export={}&type=report&code={}'.format(series, code)  # 生成下载地址
         driver.maximize_window()
         driver.get(url)
-        time.sleep(5)  # 适当设置大一点的数
+        time.sleep(10)  # 适当设置大一点的数,建议为10
     driver.close()
 
-
+# 注意：本程序并非本人原创，特此感谢在论坛无私提供解决方案的其他人。故在此开源，仅可用于非商业用途！
+# 网络爬虫可能会给被访问网站带来安全隐患，请务必遵守相应的法律规范和道德约束。
